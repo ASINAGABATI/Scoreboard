@@ -1,0 +1,22 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:local="clr-namespace:WpfAppNAudio">
+
+    <!-- 点滅アニメーション定義 -->
+    <Storyboard x:Key="FlashStory">
+        <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Opacity)" RepeatBehavior="Forever" AutoReverse="True">
+            <LinearDoubleKeyFrame KeyTime="0:0:0.2" Value="1" />
+            <LinearDoubleKeyFrame KeyTime="0:0:0.8" Value="0" />
+        </DoubleAnimationUsingKeyFrames>
+    </Storyboard>
+
+    <!-- Labelスタイル定義 -->
+    <Style TargetType="Label" x:Key="LabelFlash">
+        <Style.Triggers>
+            <EventTrigger RoutedEvent="Label.Loaded">
+                <BeginStoryboard Storyboard="{StaticResource FlashStory}" />
+            </EventTrigger>
+        </Style.Triggers>
+    </Style>
+</ResourceDictionary>
+ 

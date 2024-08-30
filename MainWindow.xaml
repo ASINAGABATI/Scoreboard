@@ -1,0 +1,160 @@
+﻿<Window x:Class="Scoreboard.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Scoreboard"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="800" Width="1200" WindowStyle="SingleBorderWindow"
+        KeyDown="Window_KeyDown" Closing="Window_Closing" >
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="15*" />
+            <RowDefinition Height="1*" />
+        </Grid.RowDefinitions>
+
+        <Grid Grid.Row="0" Background="SlateGray">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="3*" />
+                <RowDefinition Height="7*" />
+
+            </Grid.RowDefinitions>
+            <Grid  Grid.Row="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="4*" />
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="4*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="3*" />
+                    </Grid.RowDefinitions>
+                    <Label Name="leftTeam" Grid.Row="0" Content="LEFTフロアボールクラブ"  Foreground="White" FontSize="30" HorizontalAlignment="Center" />
+
+                    <Grid Grid.Row="1" HorizontalAlignment="Stretch" >
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Name="labelLPeriod1" Grid.Column="4" Content="P1"  Foreground="White" FontSize="40" />
+                        <Label Name="labelLPeriod2" Grid.Column="3" Content="P2"  Foreground="White" FontSize="40" />
+                        <Label Name="labelLPeriod3" Grid.Column="2" Content="P3"  Foreground="White" FontSize="40" />
+                        <Label Name="labelLPeriod4" Grid.Column="1" Content="P4"  Foreground="White" FontSize="40" />
+                        <Label Name="labelLPeriod5" Grid.Column="0" Content="P5"  Foreground="White" FontSize="40" />
+                    </Grid>
+                    <Grid Grid.Row="2" HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Name="labelLPeriod1score" Grid.Column="4" Content="0" Foreground="White" FontSize="48" />
+                        <Label Name="labelLPeriod2score" Grid.Column="3" Content="1" Foreground="White" FontSize="48" />
+                        <Label Name="labelLPeriod3score" Grid.Column="2" Content="2" Foreground="White" FontSize="48" />
+                        <Label Name="labelLPeriod4score" Grid.Column="1" Content="3" Foreground="White" FontSize="48" />
+                        <Label Name="labelLPeriod5score" Grid.Column="0" Content="4" Foreground="White" FontSize="48" />
+                    </Grid>
+
+                </Grid>
+                <Grid Grid.Column="1" >
+                    <Label Content="Period"  Foreground="White" HorizontalAlignment="Center" />
+                    <Label Name="lblPeriod" Content="2" VerticalAlignment="Center" HorizontalAlignment="Center" FontSize="160"
+                           Foreground="White" Style="{StaticResource LabelFlash}" PreviewMouseLeftButtonUp="lblPeriod_PreviewMouseLeftButtonUp" PreviewMouseRightButtonUp="lblPeriod_PreviewMouseRightButtonUp" />
+                </Grid>
+
+                <Grid Grid.Column="2" >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="5*" />
+                        <RowDefinition Height="2*" />
+                        <RowDefinition Height="3*" />
+                    </Grid.RowDefinitions>
+                    <Label Name="rightTeam" Grid.Row="0" Content="Right FloorBall Club"  Foreground="White" FontSize="30" HorizontalAlignment="Center" />
+
+                    <Grid Grid.Row="1" HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Name="labelRPeriod1" Grid.Column="0" Content="P1"  Foreground="White" FontSize="40" />
+                        <Label Name="labelRPeriod2" Grid.Column="1" Content="P2"  Foreground="White" FontSize="40" />
+                        <Label Name="labelRPeriod3" Grid.Column="2" Content="P3"  Foreground="White" FontSize="40" />
+                        <Label Name="labelRPeriod4" Grid.Column="3" Content="P4"  Foreground="White" FontSize="40" />
+                        <Label Name="labelRPeriod5" Grid.Column="4" Content="P5"  Foreground="White" FontSize="40" />
+                    </Grid>
+                    <Grid Grid.Row="2" HorizontalAlignment="Stretch">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                            <ColumnDefinition Width="1*" />
+                        </Grid.ColumnDefinitions>
+                        <Label Name="labelRPeriod1score" Grid.Column="0" Content="0" Foreground="White" FontSize="48" />
+                        <Label Name="labelRPeriod2score" Grid.Column="1" Content="1" Foreground="White" FontSize="48" />
+                        <Label Name="labelRPeriod3score" Grid.Column="2" Content="2" Foreground="White" FontSize="48" />
+                        <Label Name="labelRPeriod4score" Grid.Column="3" Content="3" Foreground="White" FontSize="48" />
+                        <Label Name="labelRPeriod5score" Grid.Column="4" Content="4" Foreground="White" FontSize="48" />
+                    </Grid>
+
+                </Grid>
+            </Grid>
+
+            <Grid Grid.Row="1" Background="DarkSlateGray">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="2*" />
+                    <ColumnDefinition Width="6*" />
+                    <ColumnDefinition Width="2*" />
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0" Background="SlateGray">
+                    <Label x:Name="labelScoreLeft" Grid.Column="0" Content="4" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center"
+                       FontSize="200" Foreground="Azure" PreviewMouseLeftButtonUp="labelScoreLeft_PreviewMouseLeftButtonUp" PreviewMouseRightButtonUp="labelScoreLeft_PreviewMouseRightButtonUp" />
+                </Grid>
+                <Label x:Name="labelWatch" Grid.Column="1" Content="3:00" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center"
+                       FontSize="480" Foreground="Yellow" PreviewMouseLeftButtonUp="labelWatch_PreviewMouseLeftButtonUp" PreviewMouseRightButtonUp="labelWatch_PreviewMouseRightButtonUp"/>
+                <Grid Grid.Column="2" Background="SlateGray">
+                    <Label x:Name="labelScoreRight" Grid.Column="2" Content="0" HorizontalAlignment="Center" Margin="0,0,0,0" VerticalAlignment="Center"
+                       FontSize="200" Foreground="Azure" PreviewMouseLeftButtonUp="labelScoreRight_PreviewMouseLeftButtonUp" PreviewMouseRightButtonUp="labelScoreRight_PreviewMouseRightButtonUp" />
+                </Grid>
+            </Grid>
+
+        </Grid>
+
+        <Grid  Grid.Row="1"  Background="Gray">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="2*" />
+                <ColumnDefinition Width="1*" />
+                <ColumnDefinition Width="2*" />
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Orientation="Horizontal" HorizontalAlignment="Left" VerticalAlignment="Center" >
+                <Button x:Name="buttonStatus" Content="開始" Height="28" Width="70" Margin="4,0,0,0" Click="buttonStatus_Click" />
+                <Label Name="labelState" Content="待機中" Style="{StaticResource LabelFlash}" Margin="10,0,0,0" Foreground="WhiteSmoke" />
+                <Button Name="buttonReset" Content="Reset" Height="22" Width="40" Margin="14,0,0,0" Click="buttonReset_Click" />
+            </StackPanel>
+            <StackPanel Grid.Column="1" Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" >
+                <Button x:Name="buttonSettings" Content="設定" Height="28" Width="70" Click="buttonSetting_Click" />
+            </StackPanel>
+            <StackPanel Grid.Column="2" Orientation="Horizontal" HorizontalAlignment="Right" VerticalAlignment="Center" >
+                <Slider x:Name="sliderSystemVolume"
+                    TickPlacement="None" Foreground="GreenYellow" Height="30" Width="100" Margin="0,16,0,0"
+                    Maximum="100" SmallChange="1" LargeChange="10" 
+                    ValueChanged="sliderSystemVolume_ValueChanged" IsSnapToTickEnabled="True" />
+                <Label x:Name="labelVolume" Content="volume" Height="30" Width="30" Margin="0,10,0,0" />
+
+                <Button x:Name="buttonAkiofutatabi" Content="Play" Height="28" Width="50"  Margin="0,0,4,0" Click="buttonAkiofutatabi_Click"/>
+                <Button x:Name="buttonClose" Content="Close" Height="28" Width="50" Margin="0,0,4,0" Click="buttonClose_Click" />
+            </StackPanel>
+        </Grid>
+
+    </Grid>
+</Window>
